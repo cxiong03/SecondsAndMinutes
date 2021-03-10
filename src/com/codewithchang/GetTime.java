@@ -1,10 +1,14 @@
 package com.codewithchang;
 
+
 public class GetTime {
+
+public static final String INVALID_VALUE_MESSAGE = "Invalid value";
+
     public static String getDurationString(long minutes, long seconds) {
 
         if((minutes < 0) || (seconds < 0) || (seconds > 59)) {
-            return "Invalid value";
+            return INVALID_VALUE_MESSAGE;
         }
         long hours = minutes / 60;
         long remainingMinutes = minutes % 60;
@@ -30,7 +34,7 @@ public class GetTime {
 
     public static String getDurationString(long seconds) {
         if(seconds < 0) {
-        return "Invalid value";
+        return INVALID_VALUE_MESSAGE;
         }
 
         long minutes = seconds / 60;
